@@ -6,11 +6,12 @@
   "scripts": {
     "build": "babel src --extensions .js,.ts,.tsx --out-dir dist",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
-    "check-types": "tsc",
+    "check-types": "yarn tsc",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
-    "format": "npm run prettier -- --write",
-    "check-format": "npm run prettier -- --list-different",
-    "validate": "npm run check-types && npm run check-format && npm run lint && npm run build"
+    "format": "yarn run prettier -- --write",
+    "check-format": "yarn run prettier -- --list-different",
+    "validate": "yarn run check-types && yarn run check-format && yarn run lint && yarn run build",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
@@ -21,7 +22,8 @@
     "@typescript-eslint/parser": "^2.7.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
-    "husky": "^3.0.9",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
     "prettier": "^1.19.1",
     "typescript": "^3.7.2"
   }
